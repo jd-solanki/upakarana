@@ -5,6 +5,7 @@ from PyQt6.QtCore import QEvent, QObject, Qt
 from PyQt6.QtGui import QGuiApplication, QKeyEvent
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedLayout, QWidget
 
+from app.config import config
 from app.launcher import Launcher
 from app.views.list_view import AListView
 
@@ -12,10 +13,20 @@ from app.views.list_view import AListView
 class MainWindow(QMainWindow):
     def __init__(self, launcher: Launcher):
         super(MainWindow, self).__init__()
+        self.init_window()
         self.init_launcher(launcher)
 
+        self.init_stacked_layout()
+
+        # Main list view
+        AListView(self.launcher.commands, self.stacked_layout)
+
+        # # Add main list view to stack
+        # self.stacked_layout.addWidget(list_view.layout_widget)
+
+    def init_window(self):
         # Set window title
-        self.setWindowTitle("Upakarana")
+        self.setWindowTitle(config.app_name.capitalize())
 
         # Set the window size
         self.resize(800, 450)
@@ -29,14 +40,6 @@ class MainWindow(QMainWindow):
         centerPoint = primary_screen.availableGeometry().center()
         qtRectangle.moveCenter(centerPoint)
         self.move(qtRectangle.topLeft())
-
-        self.init_stacked_layout()
-
-        # Main list view
-        AListView(self.launcher.commands, self.stacked_layout)
-
-        # # Add main list view to stack
-        # self.stacked_layout.addWidget(list_view.layout_widget)
 
     def init_stacked_layout(self):
         # Main Stacked Layout
@@ -62,11 +65,15 @@ class MainWindow(QMainWindow):
 
         key_event = cast(QKeyEvent, a1)
         key: int = key_event.key()
+
         if key != Qt.Key.Key_Escape:
             return super().eventFilter(a0, a1)
 
+        # If key is escape => go back to previous page
         if self.stacked_layout.currentIndex() > 0:
             self.stacked_layout.setCurrentIndex(self.stacked_layout.currentIndex() - 1)
+
+        # If current page is last page => quit the app
         else:
             QApplication.quit()
 
