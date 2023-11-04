@@ -1,4 +1,5 @@
-from PyQt6.QtWidgets import QLabel, QPushButton, QStackedLayout, QVBoxLayout, QWidget
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QLabel, QVBoxLayout, QWidget
 
 from app.config import config
 
@@ -8,21 +9,15 @@ class AboutContent(QWidget):
         super().__init__()
 
         layout = QVBoxLayout()
+        layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        layout.addWidget(QLabel(config.app_name))
-        
-        go_back_btn = QPushButton("Go back")
-        go_back_btn.clicked.connect(self.go_back) # type: ignore
-        layout.addWidget(go_back_btn)
+        app_label = QLabel("👨‍💻 " + config.app_name.capitalize())
+        font = app_label.font()
+        font.setPointSize(16)
+        app_label.setFont(font)
+        layout.addWidget(app_label)
 
-        # self.content_widget = QWidget()
+        app_desc = QLabel(config.app_desc)
+        layout.addWidget(app_desc)
+
         self.setLayout(layout)
-
-    def go_back(self):
-        print("clicked...")
-        # Auto select the first item in the list after filtering
-        parent = self.parent()
-        print(f"parent: {parent}")
-        if isinstance(parent, QStackedLayout):
-            print(f"parent.currentIndex(): {parent.currentIndex()}")
-            parent.setCurrentIndex(parent.currentIndex() - 1)
