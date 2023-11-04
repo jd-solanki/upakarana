@@ -45,6 +45,7 @@ class AListView():
         self.list_view.setCurrentIndex(self.commands_model.index(0, 0))
 
         layout.addWidget(self.list_view)
+        layout.setContentsMargins(0,0,0,0)
 
         # Main Widget
         self.layout_widget = QWidget()
