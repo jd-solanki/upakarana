@@ -6,8 +6,11 @@ from PyQt6.QtGui import QGuiApplication, QKeyEvent
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedLayout, QWidget
 
 from app.config import config
+from app.hotkeys import HotKeys
 from app.launcher import Launcher
 from app.views.list_view import AListView
+
+hotkeys_disabled = "--hotkeys" not in sys.argv
 
 
 class MainWindow(QMainWindow):
@@ -40,6 +43,14 @@ class MainWindow(QMainWindow):
         centerPoint = primary_screen.availableGeometry().center()
         qtRectangle.moveCenter(centerPoint)
         self.move(qtRectangle.topLeft())
+
+        # Only hide the window if hotkeys are enabled
+        if not hotkeys_disabled:
+            # Hide the window initially
+            self.hide()
+
+            # Enable hotkeys
+            HotKeys(self)
 
     def init_stacked_layout(self):
         # Main Stacked Layout
@@ -83,5 +94,6 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     w = MainWindow(Launcher())
-    w.show()
+    if hotkeys_disabled:
+        w.show()
     sys.exit(app.exec())
