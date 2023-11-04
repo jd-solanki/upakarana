@@ -1,9 +1,11 @@
-from app.launcher import Command
+from app.launcher import ContentCommand, ExecutableCommand
+
+from .content.about import AboutContent
 
 
 def exec_reload():
         print("Reloading Upakarana")
-reload = Command(name="Reload Upakarana", execute=exec_reload)
+reload = ExecutableCommand(name="Reload Upakarana", execute=exec_reload)
     
 
 
@@ -11,4 +13,4 @@ def exec_about():
     print(
         "This is upakarana. Cross platform python based launcher similar to Raycast & Script Kit."
     )
-about = Command(name="About", execute=exec_about)
+about = ContentCommand(name="About", content=AboutContent)

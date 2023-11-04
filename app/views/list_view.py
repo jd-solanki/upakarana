@@ -1,16 +1,17 @@
 from typing import Final
 
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QListView, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import QListView, QStackedLayout, QVBoxLayout, QWidget
 
 from app.custom_widgets.line_edit import ModelFilterLineEdit
-from app.launcher import Command
+from app.launcher import ContentCommand, ExecutableCommand
 from app.models.commands import ModelCommands
 
 
 class AListView():
-    def __init__(self, commands: list[Command]):
-        self.VIEW_COMMANDS: Final[list[Command]] = commands
+    def __init__(self, commands: list[ExecutableCommand | ContentCommand], stacked_layout: QStackedLayout):
+        self.VIEW_COMMANDS: Final[list[ExecutableCommand | ContentCommand]] = commands
+        self.stacked_layout = stacked_layout
         self.init_ui()
 
     def init_ui(self):
@@ -18,7 +19,7 @@ class AListView():
         self.list_view = QListView()
 
         # Models
-        self.commands_model = ModelCommands(self.VIEW_COMMANDS, self.list_view)
+        self.commands_model = ModelCommands(self.VIEW_COMMANDS, self.list_view, self.stacked_layout)
 
         layout = QVBoxLayout()
 
@@ -51,3 +52,4 @@ class AListView():
         self.layout_widget = QWidget()
         self.layout_widget.setLayout(layout)
         layout.setAlignment(Qt.AlignmentFlag.AlignTop)
+        self.stacked_layout.addWidget(self.layout_widget)

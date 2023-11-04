@@ -1,5 +1,5 @@
 
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedLayout, QWidget
 
 from app.launcher import Launcher
 from app.views.list_view import AListView
@@ -13,10 +13,22 @@ class MainWindow(QMainWindow):
 
         # Set window title
         self.setWindowTitle("Upakarana")
+        self.init_stacked_layout()
 
-        list_view = AListView(self.launcher.commands)
+        # Main list view
+        AListView(self.launcher.commands, self.stacked_layout)
 
-        self.setCentralWidget(list_view.layout_widget)
+        # # Add main list view to stack
+        # self.stacked_layout.addWidget(list_view.layout_widget)
+
+    def init_stacked_layout(self):
+        # Main Stacked Layout
+        self.stacked_layout = QStackedLayout()
+
+        # Main Widget
+        stacked_layout_widget = QWidget()
+        stacked_layout_widget.setLayout(self.stacked_layout)
+        self.setCentralWidget(stacked_layout_widget)
 
     def init_launcher(self, launcher: Launcher):
         self.launcher = launcher

@@ -1,17 +1,18 @@
 from typing import Any, Final, override
 
 from PyQt6.QtCore import QAbstractListModel, QModelIndex, Qt
-from PyQt6.QtWidgets import QListView, QMainWindow
+from PyQt6.QtWidgets import QListView, QMainWindow, QStackedLayout
 
-from app.launcher import Command
+from app.launcher import ContentCommand, ExecutableCommand
 
 
 class ModelCommands(QAbstractListModel):
-    def __init__(self, commands: list[Command], list_view: QListView, *args: Any, **kwargs: Any):
+    def __init__(self, commands: list[ExecutableCommand | ContentCommand], list_view: QListView, stacked_layout: QStackedLayout, *args: Any, **kwargs: Any):
         super().__init__(*args, **kwargs)
-        self.MODEL_COMMANDS: Final[list[Command]] = commands
+        self.MODEL_COMMANDS: Final[list[ExecutableCommand | ContentCommand]] = commands
         self.filtered_commands = commands
         self.list_view = list_view
+        self.stacked_layout = stacked_layout
 
     @override
     def data(self, index: QModelIndex, role: int = Qt.ItemDataRole.DisplayRole):
@@ -23,7 +24,7 @@ class ModelCommands(QAbstractListModel):
     def rowCount(self, parent: QModelIndex = QModelIndex()):
         return len(self.filtered_commands)
     
-    def get_command(self, index: QModelIndex) -> Command | None:
+    def get_command(self, index: QModelIndex) -> ExecutableCommand | ContentCommand | None:
         if 0 <= index.row() < len(self.filtered_commands):
             return self.filtered_commands[index.row()]
         
@@ -52,6 +53,10 @@ class ModelCommands(QAbstractListModel):
         command = self.get_command(selected_item_index)
 
         if command:
-            command.execute()
+            if isinstance(command, ExecutableCommand):
+                command.execute()
+            if isinstance(command, ContentCommand):
+                self.stacked_layout.addWidget(command.content())
+                self.stacked_layout.setCurrentIndex(self.stacked_layout.currentIndex() + 1)
         else:
             print("[ERROR] Can't find selected command")

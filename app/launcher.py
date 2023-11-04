@@ -1,16 +1,23 @@
 import importlib
 import pathlib
 from dataclasses import dataclass
-from typing import Callable
+from typing import Callable, Type
+
+from PyQt6.QtWidgets import QWidget
 
 current_dir = pathlib.Path(__file__).parent.resolve()
 plugins_dir = current_dir / "plugins"
 
 
 @dataclass
-class Command:
+class ExecutableCommand:
     name: str
     execute: Callable[[], None]
+
+@dataclass
+class ContentCommand:
+    name: str
+    content: Type[QWidget]
 
 @dataclass
 class Plugin:
@@ -21,12 +28,12 @@ class Plugin:
 class Launcher:
     def __init__(self):
         self.plugins: list[Plugin] = []
-        self.commands: list[Command] = []
+        self.commands: list[ExecutableCommand | ContentCommand] = []
 
     def register_plugin(self, plugin: Plugin) -> None:
         self.plugins.append(plugin)
 
-    def register_commands(self, command: Command) -> None:
+    def register_commands(self, command: ExecutableCommand | ContentCommand) -> None:
         self.commands.append(command)
 
     def load_plugins(self) -> None:
