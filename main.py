@@ -2,7 +2,7 @@ import sys
 from typing import cast, override
 
 from PyQt6.QtCore import QEvent, QObject, Qt
-from PyQt6.QtGui import QKeyEvent
+from PyQt6.QtGui import QGuiApplication, QKeyEvent
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedLayout, QWidget
 
 from app.launcher import Launcher
@@ -16,6 +16,20 @@ class MainWindow(QMainWindow):
 
         # Set window title
         self.setWindowTitle("Upakarana")
+
+        # Set the window size
+        self.resize(800, 450)
+
+        # Move the window to the center of the screen
+        qtRectangle = self.frameGeometry()
+        primary_screen = QGuiApplication.primaryScreen()
+        if not primary_screen:
+            raise Exception("Primary screen not found")
+
+        centerPoint = primary_screen.availableGeometry().center()
+        qtRectangle.moveCenter(centerPoint)
+        self.move(qtRectangle.topLeft())
+
         self.init_stacked_layout()
 
         # Main list view
