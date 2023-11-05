@@ -1,20 +1,32 @@
-from PyQt6.QtCore import Qt
+import json
+import pathlib
+
 from PyQt6.QtGui import QFont
-from PyQt6.QtWidgets import QLabel, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import QGridLayout, QLabel, QWidget
+
+# Get current file directory
+curr_dir = pathlib.Path(__file__).parent.resolve()
+
+emoji_data = curr_dir / "emojis.json"
+
+# Load emojis from json file
+emojis = []
+with open(emoji_data, "r") as file:
+    emojis = json.load(file)
 
 
 class EmojiContent(QWidget):
     def __init__(self):
         super().__init__()
 
-        layout = QVBoxLayout()
-        layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        emoji_text = QLabel("\U0001F923 \U0001F602 \U0001F609")
+        layout = QGridLayout()
 
         noto_fonts = QFont("Noto Color Emoji", 16)
 
-        emoji_text.setFont(noto_fonts)
-        layout.addWidget(emoji_text)
+        for i, emoji in enumerate(emojis):
+            unicode_sequence = emoji["unicode"].encode("utf-8").decode("unicode_escape")
+            emoji_text = QLabel(unicode_sequence)
+            emoji_text.setFont(noto_fonts)
+            layout.addWidget(emoji_text, i // 8, i % 8)
 
         self.setLayout(layout)

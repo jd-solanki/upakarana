@@ -1,0 +1,1244 @@
+[
+    {
+        "full_name": "couple with heart",
+        "unicode": "\\U0001F468\\U0000200D\\U00002764\\U0000FE0F\\U0000200D\\U0001F468",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "kiss",
+        "unicode": "\\U0001F468\\U0000200D\\U00002764\\U0000FE0F\\U0000200D\\U0001F48B\\U0000200D\\U0001F468",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "family",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F466",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "men holding hands",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F91D\\U0000200D\\U0001F468",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman and man holding hands",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F91D\\U0000200D\\U0001F468",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "women holding hands",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F91D\\U0000200D\\U0001F469",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "people holding hands",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F91D\\U0000200D\\U0001F9D1",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "handshake",
+        "unicode": "\\U0001FAF1\\U0000200D\\U0001FAF2",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "person running facing right",
+        "unicode": "\\U0001F3C3\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man health worker",
+        "unicode": "\\U0001F468\\U0000200D\\U00002695\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man judge",
+        "unicode": "\\U0001F468\\U0000200D\\U00002696\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man pilot",
+        "unicode": "\\U0001F468\\U0000200D\\U00002708\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man farmer",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F33E",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man cook",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F373",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man feeding baby",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F37C",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man student",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F393",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man singer",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F3A4",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man artist",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F3A8",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man teacher",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F3EB",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man factory worker",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F3ED",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man technologist",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F4BB",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man office worker",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F4BC",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man mechanic",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F527",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man scientist",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F52C",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man astronaut",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F680",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man firefighter",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F692",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man with white cane",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F9AF",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man with white cane facing right",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F9AF\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man in motorized wheelchair",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F9BC",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man in motorized wheelchair facing right",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F9BC\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man in manual wheelchair",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F9BD",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man in manual wheelchair facing right",
+        "unicode": "\\U0001F468\\U0000200D\\U0001F9BD\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman health worker",
+        "unicode": "\\U0001F469\\U0000200D\\U00002695\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman judge",
+        "unicode": "\\U0001F469\\U0000200D\\U00002696\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman pilot",
+        "unicode": "\\U0001F469\\U0000200D\\U00002708\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman farmer",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F33E",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman cook",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F373",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman feeding baby",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F37C",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman student",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F393",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman singer",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F3A4",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman artist",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F3A8",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman teacher",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F3EB",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman factory worker",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F3ED",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman technologist",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F4BB",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman office worker",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F4BC",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman mechanic",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F527",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman scientist",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F52C",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman astronaut",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F680",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman firefighter",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F692",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman with white cane",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F9AF",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman with white cane facing right",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F9AF\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman in motorized wheelchair",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F9BC",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman in motorized wheelchair facing right",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F9BC\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman in manual wheelchair",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F9BD",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman in manual wheelchair facing right",
+        "unicode": "\\U0001F469\\U0000200D\\U0001F9BD\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "person walking facing right",
+        "unicode": "\\U0001F6B6\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "person kneeling facing right",
+        "unicode": "\\U0001F9CE\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "health worker",
+        "unicode": "\\U0001F9D1\\U0000200D\\U00002695\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "judge",
+        "unicode": "\\U0001F9D1\\U0000200D\\U00002696\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "pilot",
+        "unicode": "\\U0001F9D1\\U0000200D\\U00002708\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "farmer",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F33E",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "cook",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F373",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "person feeding baby",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F37C",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "mx claus",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F384",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "student",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F393",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "singer",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F3A4",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "artist",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F3A8",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "teacher",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F3EB",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "factory worker",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F3ED",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "technologist",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F4BB",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "office worker",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F4BC",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "mechanic",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F527",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "scientist",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F52C",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "astronaut",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F680",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "firefighter",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F692",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "person with white cane",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F9AF",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "person with white cane facing right",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F9AF\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "person in motorized wheelchair",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F9BC",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "person in motorized wheelchair facing right",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F9BC\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "person in manual wheelchair",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F9BD",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "person in manual wheelchair facing right",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F9BD\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman bouncing ball",
+        "unicode": "\\U000026F9\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man bouncing ball",
+        "unicode": "\\U000026F9\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman running",
+        "unicode": "\\U0001F3C3\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman running facing right",
+        "unicode": "\\U0001F3C3\\U0000200D\\U00002640\\U0000FE0F\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man running",
+        "unicode": "\\U0001F3C3\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man running facing right",
+        "unicode": "\\U0001F3C3\\U0000200D\\U00002642\\U0000FE0F\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman surfing",
+        "unicode": "\\U0001F3C4\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man surfing",
+        "unicode": "\\U0001F3C4\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman swimming",
+        "unicode": "\\U0001F3CA\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man swimming",
+        "unicode": "\\U0001F3CA\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman lifting weights",
+        "unicode": "\\U0001F3CB\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man lifting weights",
+        "unicode": "\\U0001F3CB\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman golfing",
+        "unicode": "\\U0001F3CC\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man golfing",
+        "unicode": "\\U0001F3CC\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman police officer",
+        "unicode": "\\U0001F46E\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man police officer",
+        "unicode": "\\U0001F46E\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "women with bunny ears",
+        "unicode": "\\U0001F46F\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "men with bunny ears",
+        "unicode": "\\U0001F46F\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "woman with veil",
+        "unicode": "\\U0001F470\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man with veil",
+        "unicode": "\\U0001F470\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman",
+        "unicode": "\\U0001F471\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man",
+        "unicode": "\\U0001F471\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman wearing turban",
+        "unicode": "\\U0001F473\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man wearing turban",
+        "unicode": "\\U0001F473\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman construction worker",
+        "unicode": "\\U0001F477\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man construction worker",
+        "unicode": "\\U0001F477\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman tipping hand",
+        "unicode": "\\U0001F481\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man tipping hand",
+        "unicode": "\\U0001F481\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman guard",
+        "unicode": "\\U0001F482\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man guard",
+        "unicode": "\\U0001F482\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman getting massage",
+        "unicode": "\\U0001F486\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man getting massage",
+        "unicode": "\\U0001F486\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman getting haircut",
+        "unicode": "\\U0001F487\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man getting haircut",
+        "unicode": "\\U0001F487\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman detective",
+        "unicode": "\\U0001F575\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man detective",
+        "unicode": "\\U0001F575\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman gesturing NO",
+        "unicode": "\\U0001F645\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man gesturing NO",
+        "unicode": "\\U0001F645\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman gesturing OK",
+        "unicode": "\\U0001F646\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man gesturing OK",
+        "unicode": "\\U0001F646\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman bowing",
+        "unicode": "\\U0001F647\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man bowing",
+        "unicode": "\\U0001F647\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman raising hand",
+        "unicode": "\\U0001F64B\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man raising hand",
+        "unicode": "\\U0001F64B\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman frowning",
+        "unicode": "\\U0001F64D\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man frowning",
+        "unicode": "\\U0001F64D\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman pouting",
+        "unicode": "\\U0001F64E\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man pouting",
+        "unicode": "\\U0001F64E\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman rowing boat",
+        "unicode": "\\U0001F6A3\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man rowing boat",
+        "unicode": "\\U0001F6A3\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman biking",
+        "unicode": "\\U0001F6B4\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man biking",
+        "unicode": "\\U0001F6B4\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman mountain biking",
+        "unicode": "\\U0001F6B5\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man mountain biking",
+        "unicode": "\\U0001F6B5\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman walking",
+        "unicode": "\\U0001F6B6\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman walking facing right",
+        "unicode": "\\U0001F6B6\\U0000200D\\U00002640\\U0000FE0F\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man walking",
+        "unicode": "\\U0001F6B6\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man walking facing right",
+        "unicode": "\\U0001F6B6\\U0000200D\\U00002642\\U0000FE0F\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman facepalming",
+        "unicode": "\\U0001F926\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man facepalming",
+        "unicode": "\\U0001F926\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman in tuxedo",
+        "unicode": "\\U0001F935\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man in tuxedo",
+        "unicode": "\\U0001F935\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman shrugging",
+        "unicode": "\\U0001F937\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man shrugging",
+        "unicode": "\\U0001F937\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman cartwheeling",
+        "unicode": "\\U0001F938\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man cartwheeling",
+        "unicode": "\\U0001F938\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman juggling",
+        "unicode": "\\U0001F939\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man juggling",
+        "unicode": "\\U0001F939\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "women wrestling",
+        "unicode": "\\U0001F93C\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "men wrestling",
+        "unicode": "\\U0001F93C\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "woman playing water polo",
+        "unicode": "\\U0001F93D\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man playing water polo",
+        "unicode": "\\U0001F93D\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman playing handball",
+        "unicode": "\\U0001F93E\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man playing handball",
+        "unicode": "\\U0001F93E\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman superhero",
+        "unicode": "\\U0001F9B8\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man superhero",
+        "unicode": "\\U0001F9B8\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman supervillain",
+        "unicode": "\\U0001F9B9\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man supervillain",
+        "unicode": "\\U0001F9B9\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman standing",
+        "unicode": "\\U0001F9CD\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man standing",
+        "unicode": "\\U0001F9CD\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman kneeling",
+        "unicode": "\\U0001F9CE\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman kneeling facing right",
+        "unicode": "\\U0001F9CE\\U0000200D\\U00002640\\U0000FE0F\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man kneeling",
+        "unicode": "\\U0001F9CE\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man kneeling facing right",
+        "unicode": "\\U0001F9CE\\U0000200D\\U00002642\\U0000FE0F\\U0000200D\\U000027A1\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "deaf woman",
+        "unicode": "\\U0001F9CF\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "deaf man",
+        "unicode": "\\U0001F9CF\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman in steamy room",
+        "unicode": "\\U0001F9D6\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man in steamy room",
+        "unicode": "\\U0001F9D6\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman climbing",
+        "unicode": "\\U0001F9D7\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man climbing",
+        "unicode": "\\U0001F9D7\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman in lotus position",
+        "unicode": "\\U0001F9D8\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man in lotus position",
+        "unicode": "\\U0001F9D8\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman mage",
+        "unicode": "\\U0001F9D9\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man mage",
+        "unicode": "\\U0001F9D9\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman fairy",
+        "unicode": "\\U0001F9DA\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man fairy",
+        "unicode": "\\U0001F9DA\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman vampire",
+        "unicode": "\\U0001F9DB\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man vampire",
+        "unicode": "\\U0001F9DB\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "mermaid",
+        "unicode": "\\U0001F9DC\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "merman",
+        "unicode": "\\U0001F9DC\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman elf",
+        "unicode": "\\U0001F9DD\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "man elf",
+        "unicode": "\\U0001F9DD\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "woman genie",
+        "unicode": "\\U0001F9DE\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "man genie",
+        "unicode": "\\U0001F9DE\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "woman zombie",
+        "unicode": "\\U0001F9DF\\U0000200D\\U00002640\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "man zombie",
+        "unicode": "\\U0001F9DF\\U0000200D\\U00002642\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "person",
+        "unicode": "\\U0001F9D1\\U0000200D\\U0001F9B0",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "broken chain",
+        "unicode": "\\U000026D3\\U0000FE0F\\U0000200D\\U0001F4A5",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "heart on fire",
+        "unicode": "\\U00002764\\U0000FE0F\\U0000200D\\U0001F525",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "mending heart",
+        "unicode": "\\U00002764\\U0000FE0F\\U0000200D\\U0001FA79",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "brown mushroom",
+        "unicode": "\\U0001F344\\U0000200D\\U0001F7EB",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "lime",
+        "unicode": "\\U0001F34B\\U0000200D\\U0001F7E9",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "transgender flag",
+        "unicode": "\\U0000FE0F\\U0000200D\\U000026A7\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "rainbow flag",
+        "unicode": "\\U0000FE0F\\U0000200D\\U0001F308",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "pirate flag",
+        "unicode": "\\U0000200D\\U00002620\\U0000FE0F",
+        "has_skin_tones": true,
+        "aliases": []
+    },
+    {
+        "full_name": "black cat",
+        "unicode": "\\U0001F408\\U0000200D\\U00002B1B",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "service dog",
+        "unicode": "\\U0001F415\\U0000200D\\U0001F9BA",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "black bird",
+        "unicode": "\\U0001F426\\U0000200D\\U00002B1B",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "phoenix",
+        "unicode": "\\U0001F426\\U0000200D\\U0001F525",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "polar bear",
+        "unicode": "\\U0001F43B\\U0000200D\\U00002744\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "eye in speech bubble",
+        "unicode": "\\U0001F441\\U0000FE0F\\U0000200D\\U0001F5E8\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "face exhaling",
+        "unicode": "\\U0001F62E\\U0000200D\\U0001F4A8",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "face with spiral eyes",
+        "unicode": "\\U0001F635\\U0000200D\\U0001F4AB",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "face in clouds",
+        "unicode": "\\U0001F636\\U0000200D\\U0001F32B\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "head shaking horizontally",
+        "unicode": "\\U0001F642\\U0000200D\\U00002194\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    },
+    {
+        "full_name": "head shaking vertically",
+        "unicode": "\\U0001F642\\U0000200D\\U00002195\\U0000FE0F",
+        "has_skin_tones": false,
+        "aliases": []
+    }
+]
