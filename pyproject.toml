@@ -6,7 +6,7 @@ authors = ["jd-solanki <jdsolanki0001@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "3.12"
 pyqt6 = "^6.6.0"
 pyqt5-stubs = "^5.15.6.0"
 

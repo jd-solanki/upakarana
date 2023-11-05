@@ -1,40 +1,36 @@
-from typing import Any, Final, override
+from typing import override
 
-from PyQt6.QtCore import QAbstractListModel, QModelIndex, Qt
-from PyQt6.QtWidgets import QListView, QMainWindow, QStackedLayout
+from PyQt6.QtCore import QModelIndex, Qt
+from PyQt6.QtWidgets import QMainWindow
 
 from app.launcher import ContentCommand, ExecutableCommand
+from app.models.abstract_list_model import AAbstractListModel
 
 
-class ModelCommands(QAbstractListModel):
-    def __init__(self, commands: list[ExecutableCommand | ContentCommand], list_view: QListView, stacked_layout: QStackedLayout, *args: Any, **kwargs: Any):
-        super().__init__(*args, **kwargs)
-        self.MODEL_COMMANDS: Final[list[ExecutableCommand | ContentCommand]] = commands
-        self.filtered_commands = commands
-        self.list_view = list_view
-        self.stacked_layout = stacked_layout
-
+class ModelCommands(AAbstractListModel[ContentCommand | ExecutableCommand]):
     @override
     def data(self, index: QModelIndex, role: int = Qt.ItemDataRole.DisplayRole):
         if role == Qt.ItemDataRole.DisplayRole:
-            cmd = self.filtered_commands[index.row()]
-            return cmd.name
+            list_item = self.filtered_list_items[index.row()]
+            return list_item.name
 
-    @override
-    def rowCount(self, parent: QModelIndex = QModelIndex()):
-        return len(self.filtered_commands)
-    
-    def get_command(self, index: QModelIndex) -> ExecutableCommand | ContentCommand | None:
-        if 0 <= index.row() < len(self.filtered_commands):
-            return self.filtered_commands[index.row()]
-        
+    def get_command(
+        self, index: QModelIndex
+    ) -> ExecutableCommand | ContentCommand | None:
+        if 0 <= index.row() < len(self.filtered_list_items):
+            return self.filtered_list_items[index.row()]
+
         return None
-    
-    def filter_commands(self, text: str):
+
+    def filter_list_item(self, text: str):
         if text:
-            self.filtered_commands = [cmd for cmd in self.MODEL_COMMANDS if text.lower() in cmd.name.lower()]
+            self.filtered_list_items = [
+                list_item
+                for list_item in self.LIST_ITEMS
+                if text.lower() in list_item.name.lower()
+            ]
         else:
-            self.filtered_commands = self.MODEL_COMMANDS
+            self.filtered_list_items = self.LIST_ITEMS
 
         # notify the view that the data has changed
         self.layoutChanged.emit()
@@ -44,7 +40,7 @@ class ModelCommands(QAbstractListModel):
         if isinstance(parent, QMainWindow):
             self.list_view.setCurrentIndex(self.index(0, 0))
 
-    def execute_selected_command(self):
+    def on_select_item(self):
         # If there's no filtered commands => Don't do anything
         if not self.rowCount():
             return
@@ -57,6 +53,8 @@ class ModelCommands(QAbstractListModel):
                 command.execute()
             if isinstance(command, ContentCommand):
                 self.stacked_layout.addWidget(command.content())
-                self.stacked_layout.setCurrentIndex(self.stacked_layout.currentIndex() + 1)
+                self.stacked_layout.setCurrentIndex(
+                    self.stacked_layout.currentIndex() + 1
+                )
         else:
             print("[ERROR] Can't find selected command")
