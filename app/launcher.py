@@ -14,10 +14,12 @@ class ExecutableCommand:
     name: str
     execute: Callable[[], None]
 
+
 @dataclass
 class ContentCommand:
     name: str
     content: Type[QWidget]
+
 
 @dataclass
 class Plugin:

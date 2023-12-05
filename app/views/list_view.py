@@ -1,8 +1,9 @@
 from typing import Final, Type
 
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QListView, QStackedLayout, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import QListView, QVBoxLayout, QWidget
 
+from app import App
 from app.custom_widgets.line_edit import ModelFilterLineEdit
 from app.models.abstract_list_model import AAbstractListModel
 
@@ -12,11 +13,9 @@ class AModelListView[ListItem]:
         self,
         model: Type[AAbstractListModel[ListItem]],
         list_items: list[ListItem],
-        stacked_layout: QStackedLayout,
     ):
         self.model = model
         self.VIEW_ITEMS: Final[list[ListItem]] = list_items
-        self.stacked_layout = stacked_layout
         self.init_ui()
 
     def init_ui(self):
@@ -24,9 +23,7 @@ class AModelListView[ListItem]:
         self.list_view = QListView()
 
         # Models
-        self.view_model = self.model(
-            self.VIEW_ITEMS, self.list_view, self.stacked_layout
-        )
+        self.view_model = self.model(self.VIEW_ITEMS, self.list_view)
 
         # Line Edit
         self.line_edit = ModelFilterLineEdit(self.list_view)
@@ -62,4 +59,4 @@ class AModelListView[ListItem]:
         self.layout_widget = QWidget()
         self.layout_widget.setLayout(layout)
         layout.setAlignment(Qt.AlignmentFlag.AlignTop)
-        self.stacked_layout.addWidget(self.layout_widget)
+        App().stacked_layout.addWidget(self.layout_widget)

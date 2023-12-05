@@ -5,6 +5,7 @@ from PyQt6.QtCore import QEvent, QObject, Qt
 from PyQt6.QtGui import QGuiApplication, QKeyEvent
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedLayout, QWidget
 
+from app import App
 from app.hotkeys import HotKeys
 from app.launcher import Launcher
 from app.models.commands import ModelCommands
@@ -22,7 +23,7 @@ class MainWindow(QMainWindow):
         self.init_stacked_layout()
 
         # Main list view
-        AModelListView(ModelCommands, self.launcher.commands, self.stacked_layout)
+        AModelListView(ModelCommands, self.launcher.commands)
 
         # # Add main list view to stack
         # self.stacked_layout.addWidget(list_view.layout_widget)
@@ -58,6 +59,8 @@ class MainWindow(QMainWindow):
     def init_stacked_layout(self):
         # Main Stacked Layout
         self.stacked_layout = QStackedLayout()
+        app = App()
+        app.stacked_layout = self.stacked_layout
 
         # Main Widget
         stacked_layout_widget = QWidget()

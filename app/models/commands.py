@@ -3,6 +3,7 @@ from typing import override
 from PyQt6.QtCore import QModelIndex, Qt
 from PyQt6.QtWidgets import QMainWindow
 
+from app import App
 from app.launcher import ContentCommand, ExecutableCommand
 from app.models.abstract_list_model import AAbstractListModel
 
@@ -26,11 +27,11 @@ class ModelCommands(AAbstractListModel[ContentCommand | ExecutableCommand]):
         if text:
             self.filtered_list_items = [
                 list_item
-                for list_item in self.LIST_ITEMS
+                for list_item in self.list_items
                 if text.lower() in list_item.name.lower()
             ]
         else:
-            self.filtered_list_items = self.LIST_ITEMS
+            self.filtered_list_items = self.list_items
 
         # notify the view that the data has changed
         self.layoutChanged.emit()
@@ -52,9 +53,8 @@ class ModelCommands(AAbstractListModel[ContentCommand | ExecutableCommand]):
             if isinstance(command, ExecutableCommand):
                 command.execute()
             if isinstance(command, ContentCommand):
-                self.stacked_layout.addWidget(command.content())
-                self.stacked_layout.setCurrentIndex(
-                    self.stacked_layout.currentIndex() + 1
-                )
+                stacked_layout = App().stacked_layout
+                stacked_layout.addWidget(command.content())
+                stacked_layout.setCurrentIndex(stacked_layout.currentIndex() + 1)
         else:
             print("[ERROR] Can't find selected command")

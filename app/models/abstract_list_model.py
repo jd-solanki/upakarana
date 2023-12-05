@@ -1,40 +1,60 @@
-from abc import ABC, abstractmethod
-from typing import Any, Final, override
+from abc import abstractmethod
+from typing import Any, override
 
 from PyQt6.QtCore import QAbstractListModel, QModelIndex
-from PyQt6.QtWidgets import QListView, QStackedLayout
+from PyQt6.QtWidgets import QListView
 
 
-# We need to use this metaclass to avoid the following error: `TypeError: metaclass conflict: the metaclass of a derived class must be a`
-class ABCQAbstractListModelMeta(type(QAbstractListModel), type(ABC)):
-    pass
-
-
-class AAbstractListModel[ListItem](
-    ABC, QAbstractListModel, metaclass=ABCQAbstractListModelMeta
-):
+class AAbstractListModel[ListItem](QAbstractListModel):
     def __init__(
         self,
         list_items: list[ListItem],
         list_view: QListView,
-        stacked_layout: QStackedLayout,
         *args: Any,
         **kwargs: Any,
     ):
         super().__init__(*args, **kwargs)
-        self.LIST_ITEMS: Final[list[ListItem]] = list_items
+        self.list_items: list[ListItem] = list_items
         self.filtered_list_items = list_items
         self.list_view = list_view
-        self.stacked_layout = stacked_layout
+
+    def add_list_item(self, list_item: ListItem) -> None:
+        # Calculate the new row index (which is the end of the list)
+        new_row_index = self.rowCount()
+
+        # Notify the view that a new row will be inserted at new_row_index
+        self.beginInsertRows(QModelIndex(), new_row_index, new_row_index)
+        self.list_items.append(list_item)  # Append the new item to the data list
+        self.endInsertRows()  # End the row insertion process
+
+        # Notify the view that the data has changed
+        self.layoutChanged.emit()
+
+    def move_item(self, from_index: int, to_index: int):
+        if 0 <= from_index < self.rowCount() and 0 <= to_index < self.rowCount():
+            # Swap the items
+            self.list_items[from_index], self.list_items[to_index] = (
+                self.list_items[to_index],
+                self.list_items[from_index],
+            )
+
+            # Notify the view of the change
+            self.dataChanged.emit(
+                self.createIndex(min(from_index, to_index), 0),
+                self.createIndex(max(from_index, to_index), 0),
+            )
+
+    def move_item_to_top(self, index: int):
+        self.move_item(index, 0)
 
     @override
     def rowCount(self, parent: QModelIndex = QModelIndex()):
         return len(self.filtered_list_items)
 
     @abstractmethod
-    def filter_list_item(self, text: str):
-        pass
+    def filter_list_item(self, text: str) -> None:
+        raise NotImplementedError
 
     @abstractmethod
-    def on_select_item(self):
-        pass
+    def on_select_item(self) -> None:
+        raise NotImplementedError
