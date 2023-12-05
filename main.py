@@ -17,7 +17,12 @@ hotkeys_disabled = "--hotkeys" not in sys.argv
 class MainWindow(QMainWindow):
     def __init__(self, launcher: Launcher):
         super(MainWindow, self).__init__()
+
+        self.app = App()
+        self.app.events.emit("init", self)
+
         self.init_window()
+
         self.init_launcher(launcher)
 
         self.init_stacked_layout()
@@ -56,11 +61,12 @@ class MainWindow(QMainWindow):
             # Enable hotkeys
             HotKeys(self)
 
+        self.app.events.emit("window_initialized", self)
+
     def init_stacked_layout(self):
         # Main Stacked Layout
         self.stacked_layout = QStackedLayout()
-        app = App()
-        app.stacked_layout = self.stacked_layout
+        self.app.stacked_layout = self.stacked_layout
 
         # Main Widget
         stacked_layout_widget = QWidget()
@@ -72,7 +78,10 @@ class MainWindow(QMainWindow):
 
     def init_launcher(self, launcher: Launcher):
         self.launcher = launcher
+        self.app.events.emit("launcher_initialized", self.launcher)
+
         self.launcher.load_plugins()
+        self.app.events.emit("plugins_loaded", self)
 
     # ℹ️ a0 is obj & a1 is event
     @override
