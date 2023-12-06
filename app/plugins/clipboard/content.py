@@ -28,7 +28,10 @@ class ClipboardContent(QWidget):
 
     # TODO: We can move this to model
     def on_clipboard_change(self, new_clipboard_content: str):
-        if not self.model.does_item_exist(new_clipboard_content):
+        if (
+            not self.model.does_item_exist(new_clipboard_content)
+            and new_clipboard_content
+        ):
             self.model.add_list_item(
                 {"content": new_clipboard_content, "time": None}, index=0
             )

@@ -52,6 +52,10 @@ class ModelClipboard(AAbstractListModel[ClipboardItem]):
                 self.index(0, 0)
             )  # Set the selected item to the first index
 
+            # If hotkeys are enabled hide window
+            if not app.is_hotkeys_disabled:
+                app.main_window.hide()
+
     @override
     def filter_list_item(self, text: str):
         if text:

@@ -11,8 +11,6 @@ from app.launcher import Launcher
 from app.models.commands import ModelCommands
 from app.views.list_view import AModelListView
 
-hotkeys_disabled = "--hotkeys" not in sys.argv
-
 
 class MainWindow(QMainWindow):
     def __init__(self, launcher: Launcher):
@@ -53,7 +51,7 @@ class MainWindow(QMainWindow):
         self.move(qtRectangle.topLeft())
 
         # Only hide the window if hotkeys are enabled
-        if not hotkeys_disabled:
+        if not self.app.is_hotkeys_disabled:
             # Hide the window initially
             self.hide()
 
@@ -112,6 +110,12 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     w = MainWindow(Launcher())
-    if hotkeys_disabled:
+
+    # assign main window to app instance
+    _app = App()
+    _app.is_hotkeys_disabled = "--hotkeys" not in sys.argv
+    _app.main_window = w
+
+    if _app.is_hotkeys_disabled:
         w.show()
     sys.exit(app.exec())

@@ -52,9 +52,12 @@ class ClipboardHandler:
             raise Exception("Clipboard not found")
 
     def on_clipboard_change(self):
-        self.add_item_to_clipboard(
-            ClipboardItem(content=self.clipboard.text(), time=None)
-        )
+        content = self.clipboard.text()
+
+        if not content:
+            return
+
+        self.add_item_to_clipboard(ClipboardItem(content=content, time=None))
 
     def init_clipboard_watcher(self):
         self.clipboard_watcher = ClipboardWatcher(self.clipboard)
