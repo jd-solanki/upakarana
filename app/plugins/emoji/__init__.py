@@ -9,5 +9,4 @@ def init(launcher: Launcher):
     print("Registering emoji plugin")
 
 
-Plugin = LauncherPlugin(name="Emoji", init=init)
-Plugin = LauncherPlugin(name="Emoji", init=init)
+Plugin = LauncherPlugin(name="Emoji", init=init, is_enabled=False)

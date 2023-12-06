@@ -25,6 +25,7 @@ class ContentCommand:
 class Plugin:
     name: str
     init: Callable[["Launcher"], None]
+    is_enabled: bool = True
 
 
 class Launcher:
@@ -46,5 +47,6 @@ class Launcher:
 
         for dir in plugin_dirs:
             plugin_module = importlib.import_module(f"app.plugins.{dir.name}")
-            self.plugins.append(plugin_module.Plugin)
-            plugin_module.Plugin.init(self)
+            if plugin_module.Plugin.is_enabled:
+                self.plugins.append(plugin_module.Plugin)
+                plugin_module.Plugin.init(self)
