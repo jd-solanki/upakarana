@@ -18,13 +18,15 @@ class AAbstractListModel[ListItem](QAbstractListModel):
         self.filtered_list_items = list_items
         self.list_view = list_view
 
-    def add_list_item(self, list_item: ListItem) -> None:
+    def add_list_item(self, list_item: ListItem, index: int) -> None:
         # Calculate the new row index (which is the end of the list)
-        new_row_index = self.rowCount()
+        # new_row_index = self.rowCount()
 
-        # Notify the view that a new row will be inserted at new_row_index
-        self.beginInsertRows(QModelIndex(), new_row_index, new_row_index)
-        self.list_items.append(list_item)  # Append the new item to the data list
+        # Notify the view that a new row will be inserted at given index
+        self.beginInsertRows(QModelIndex(), index, index)
+        self.list_items.insert(
+            index, list_item
+        )  # add new item to the data list at given index
         self.endInsertRows()  # End the row insertion process
 
         # Notify the view that the data has changed

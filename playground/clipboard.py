@@ -1,106 +1,63 @@
-import datetime
+import json
 import sys
-from typing import List, Tuple
+from dataclasses import asdict, dataclass
+from pathlib import Path
+from PyQt6.QtCore import QObject, QTimer, pyqtSignal
+from PyQt6.QtWidgets import QApplication, QLabel, QMainWindow
 
-from PyQt6.QtCore import QAbstractListModel, QModelIndex, Qt
-from PyQt6.QtWidgets import (
-    QApplication,
-    QHBoxLayout,
-    QLabel,
-    QListView,
-    QMainWindow,
-    QWidget,
-)
+@dataclass
+class ClipboardItem:
+    content: str
+    time: str | None
 
+class ClipboardWatcher(QObject):
+    clipboard_changed = pyqtSignal(str)
 
-class ClipboardModel(QAbstractListModel):
-    def __init__(self, data: List[Tuple[str, str]], parent=None):
-        super().__init__(parent)
-        self._data = data
-
-    def rowCount(self, parent: QModelIndex = QModelIndex()) -> int:
-        return len(self._data)
-
-    def data(self, index: QModelIndex, role: int = Qt.ItemDataRole.DisplayRole):
-        if role == Qt.ItemDataRole.DisplayRole:
-            text, timestamp = self._data[index.row()]
-            return f"{timestamp}: {text}"
-
-
-class ClipboardContent(QWidget):
-    def __init__(self):
+    def __init__(self, clipboard, interval=1000) -> None:
         super().__init__()
+        self.clipboard = clipboard
+        self.last_clipboard_content = None
+        self.check_clipboard_timer = QTimer()
+        self.check_clipboard_timer.timeout.connect(self.check_clipboard)
+        self.check_clipboard_timer.start(interval)  # Check every `interval` milliseconds
 
-        # Create a QHBoxLayout
-        layout = QHBoxLayout()
+    def check_clipboard(self):
+        print(f"cjecki...")
+        current_clipboard_content = self.clipboard.text()
+        if current_clipboard_content != self.last_clipboard_content:
+            self.last_clipboard_content = current_clipboard_content
+            self.clipboard_changed.emit(current_clipboard_content)
 
-        # Create a QListView for the clipboard history
-        self.clipboard_list_view = QListView()
-        layout.addWidget(self.clipboard_list_view, 40)  # 40% width
+class ClipboardHandler:
+    def __init__(self, clipboard_file_path: Path) -> None:
+        self.clipboard_file_path = clipboard_file_path
 
-        # Create a QLabel for the clipboard content preview
-        self.clipboard_content_label = QLabel()
-        layout.addWidget(self.clipboard_content_label, 60)  # 60% width
+    def handle_clipboard_change(self, content):
+        print("Clipboard changed", content)
+        # Process clipboard change here, e.g., save to file
+        clipboard_item = ClipboardItem(content, None)
+        self.save_clipboard_content(clipboard_item)
 
-        # Set the layout
-        self.setLayout(layout)
-
-        # Connect to the clipboard data changed signal
-        QApplication.clipboard().dataChanged.connect(self.update_clipboard_history)
-
-        # Initialize the clipboard history
-        self.clipboard_history: List[
-            Tuple[str, str]
-        ] = []  # Each item is a tuple of (content, timestamp)
-
-        # Initialize the model
-        self.model = ClipboardModel(self.clipboard_history)
-        self.clipboard_list_view.setModel(self.model)
-
-    def update_clipboard_history(self):
-        print("Updating clipboard history")
-        # Get the current clipboard content
-        clipboard = QApplication.clipboard()
-        current_content = clipboard.text()
-
-        # Ignore if the clipboard is empty
-        if not current_content:
-            return
-
-        if self.clipboard_history:
-            # Ignore if the clipboard content is same as the last item in the history
-            if self.clipboard_history[-1][0] == current_content:
-                return
-
-        # Get the current timestamp
-        current_timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-        # Add the current content and timestamp to the history
-        self.clipboard_history.insert(0, (current_content, current_timestamp))
-
-        # Update the QListView and QLabel
-        self.model.layoutChanged.emit()
-        self.update_clipboard_content_label()
-
-    def update_clipboard_content_label(self):
-        # Update the QLabel with the current clipboard content
-        self.clipboard_content_label.setText(
-            self.clipboard_history[0][0] if self.clipboard_history else ""
-        )
-
+    def save_clipboard_content(self, item: ClipboardItem):
+        stringified_content = asdict(item)
+        with self.clipboard_file_path.open("a") as file:
+            json.dump(stringified_content, file, indent=4)
+            file.write("\n")
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-
         self.setWindowTitle("My App")
-        widget = ClipboardContent()
-        self.setCentralWidget(widget)
+        label = QLabel(text="This is a PyQt6 window!")
+        
+        self.clipboard_file_path = Path("clipboard-content.json")
+        self.clipboard_handler = ClipboardHandler(self.clipboard_file_path)
+        self.clipboard_watcher = ClipboardWatcher(QApplication.clipboard())
+        self.clipboard_watcher.clipboard_changed.connect(self.clipboard_handler.handle_clipboard_change)
 
+        self.setCentralWidget(label)
 
 app = QApplication(sys.argv)
-
 window = MainWindow()
 window.show()
-
 app.exec()

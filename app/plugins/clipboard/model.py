@@ -1,14 +1,14 @@
-from dataclasses import dataclass
-from typing import override
+from typing import TypedDict, cast, override
 
 from PyQt6.QtCore import QModelIndex, Qt
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtGui import QClipboard
+from PyQt6.QtWidgets import QMainWindow
 
+from app import App
 from app.models.abstract_list_model import AAbstractListModel
 
 
-@dataclass
-class ClipboardItem:
+class ClipboardItem(TypedDict):
     content: str
     time: str | None
 
@@ -18,13 +18,16 @@ class ModelClipboard(AAbstractListModel[ClipboardItem]):
     def data(self, index: QModelIndex, role: int = Qt.ItemDataRole.DisplayRole):
         if role == Qt.ItemDataRole.DisplayRole:
             list_item = self.filtered_list_items[index.row()]
-            return list_item.content
+            return list_item.get("content")
 
     def get_clipboard_item(self, index: QModelIndex) -> ClipboardItem | None:
         if 0 <= index.row() < len(self.filtered_list_items):
             return self.filtered_list_items[index.row()]
 
         return None
+
+    def does_item_exist(self, content: str) -> bool:
+        return any(content == item.get("content") for item in self.list_items)
 
     @override
     def on_select_item(self):
@@ -36,17 +39,18 @@ class ModelClipboard(AAbstractListModel[ClipboardItem]):
         clipboard_item = self.get_clipboard_item(selected_item_index)
 
         if clipboard_item:
-            # Set the clipboard content
-            clipboard = QApplication.clipboard()
-            if clipboard:
-                clipboard.blockSignals(True)
-                clipboard.setText(clipboard_item.content)
-                clipboard.blockSignals(False)
+            app = App()
+            clipboard = cast(QClipboard, app._clipboard_handler.clipboard)  # type: ignore
 
-                # Move the item to the top
-                self.move_item_to_top(selected_item_index.row())
-            else:
-                raise Exception("Clipboard not found")
+            clipboard.blockSignals(True)
+            clipboard.setText(clipboard_item.get("content"))
+            clipboard.blockSignals(False)
+
+            # Move the item to the top
+            self.move_item_to_top(selected_item_index.row())
+            self.list_view.setCurrentIndex(
+                self.index(0, 0)
+            )  # Set the selected item to the first index
 
     @override
     def filter_list_item(self, text: str):
@@ -54,7 +58,7 @@ class ModelClipboard(AAbstractListModel[ClipboardItem]):
             self.filtered_list_items = [
                 list_item
                 for list_item in self.list_items
-                if text.lower() in list_item.content.lower()
+                if text.lower() in list_item.get("content").lower()
             ]
         else:
             self.filtered_list_items = self.list_items

@@ -27,11 +27,10 @@ class MainWindow(QMainWindow):
 
         self.init_stacked_layout()
 
-        # Main list view
-        AModelListView(ModelCommands, self.launcher.commands)
-
-        # # Add main list view to stack
-        # self.stacked_layout.addWidget(list_view.layout_widget)
+        # Command list view
+        commands_content = QWidget()
+        AModelListView(commands_content, ModelCommands, self.launcher.commands)
+        self.stacked_layout.addWidget(commands_content)
 
     def init_window(self):
         # Disable window resizing
@@ -69,9 +68,9 @@ class MainWindow(QMainWindow):
         self.app.stacked_layout = self.stacked_layout
 
         # Main Widget
-        stacked_layout_widget = QWidget()
-        stacked_layout_widget.setLayout(self.stacked_layout)
-        self.setCentralWidget(stacked_layout_widget)
+        self.stacked_layout_widget = QWidget()
+        self.stacked_layout_widget.setLayout(self.stacked_layout)
+        self.setCentralWidget(self.stacked_layout_widget)
 
         # Install the event filter
         self.installEventFilter(self)
@@ -96,8 +95,12 @@ class MainWindow(QMainWindow):
             return super().eventFilter(a0, a1)
 
         # If key is escape => go back to previous page
-        if self.stacked_layout.currentIndex() > 0:
-            self.stacked_layout.setCurrentIndex(self.stacked_layout.currentIndex() - 1)
+        layout_children_count = self.stacked_layout.count()
+        layout_current_view_index = self.stacked_layout.currentIndex()
+        if layout_children_count > 1:
+            widget_to_remove = self.stacked_layout.currentWidget()
+            self.stacked_layout.setCurrentIndex(layout_current_view_index - 1)
+            self.stacked_layout.removeWidget(widget_to_remove)
 
         # If current page is last page => quit the app
         else:

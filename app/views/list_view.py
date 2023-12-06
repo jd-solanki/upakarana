@@ -3,7 +3,6 @@ from typing import Final, Type
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QListView, QVBoxLayout, QWidget
 
-from app import App
 from app.custom_widgets.line_edit import ModelFilterLineEdit
 from app.models.abstract_list_model import AAbstractListModel
 
@@ -11,9 +10,11 @@ from app.models.abstract_list_model import AAbstractListModel
 class AModelListView[ListItem]:
     def __init__(
         self,
+        parent_widget: QWidget,
         model: Type[AAbstractListModel[ListItem]],
         list_items: list[ListItem],
     ):
+        self.parent = parent_widget
         self.model = model
         self.VIEW_ITEMS: Final[list[ListItem]] = list_items
         self.init_ui()
@@ -56,7 +57,5 @@ class AModelListView[ListItem]:
         layout.setContentsMargins(0, 0, 0, 0)
 
         # Main Widget
-        self.layout_widget = QWidget()
-        self.layout_widget.setLayout(layout)
         layout.setAlignment(Qt.AlignmentFlag.AlignTop)
-        App().stacked_layout.addWidget(self.layout_widget)
+        self.parent.setLayout(layout)
