@@ -8,7 +8,7 @@ clean:
 	rm -rf dist build main.spec
 
 build: clean
-	python pyinstaller.py
+	python build.py
 
 preview: build
 	./dist/main

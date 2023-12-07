@@ -1,9 +1,6 @@
 name: Build Application
 
-on:
-  push:
-    branches:
-      - main  # or any other branch you want to build
+on: workflow_dispatch
 
 jobs:
   build:
