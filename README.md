@@ -6,6 +6,8 @@ I love raycast and I use it on my office Mac. But I have linux on my personal ma
 
 ## 🎯 Roadmap
 
+> _Make it beautiful but train it to kill._
+
 - [x] Create a basic UI
 - [x] Commands that render custom UI
 - [x] Commands that execute custom code
@@ -19,6 +21,7 @@ I love raycast and I use it on my office Mac. But I have linux on my personal ma
     - [ ] Screen to text
     - [ ] Calculator
     - [ ] Color picker from screen
+- [ ] Style it
 
 ## 🤝🏻 Contributing
 
