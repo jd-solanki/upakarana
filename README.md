@@ -1,5 +1,7 @@
 # Upakarana
 
+> _🚧 Under heavy development and at Alpha stage_
+
 I love raycast and I use it on my office Mac. But I have linux on my personal machine and I wanted something similar to raycast. Hence, I wanted to create cross platform raycast alternative.
 
 ## 🎯 Roadmap
