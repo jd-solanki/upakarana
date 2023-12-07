@@ -9,6 +9,7 @@ readme = "README.md"
 python = "3.12"
 pyqt6 = "^6.6.0"
 pyqt5-stubs = "^5.15.6.0"
+pyinstaller = "^6.2.0"
 
 
 [build-system]
