@@ -22,6 +22,7 @@ class ClipboardWatcher(QObject):
             interval_in_ms
         )  # Check every `interval` milliseconds
 
+    # ℹ️ This can't detect new clipboard content when copied without focus on the app on Ubuntu 22.10 (works on Mac & haven't tested on Windows)
     def check_clipboard(self):
         current_clipboard_content = self.clipboard.text()
         if current_clipboard_content != self.last_clipboard_content:
