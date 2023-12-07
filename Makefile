@@ -5,10 +5,10 @@ dev:
 	python main.py
 
 clean:
-	rm -rf dist build
+	rm -rf dist build main.spec
 
 build: clean
-	pyinstaller --onefile main.py
+	python pyinstaller.py
 
-preview:
+preview: build
 	./dist/main
