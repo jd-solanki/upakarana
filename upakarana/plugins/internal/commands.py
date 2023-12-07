@@ -1,4 +1,4 @@
-from app.launcher import ContentCommand, ExecutableCommand
+from upakarana.launcher import ContentCommand, ExecutableCommand
 
 from .content.about import AboutContent
 

@@ -5,11 +5,11 @@ from PyQt6.QtCore import QEvent, QObject, Qt
 from PyQt6.QtGui import QGuiApplication, QKeyEvent
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedLayout, QWidget
 
-from app import App
-from app.hotkeys import HotKeys
-from app.launcher import Launcher
-from app.models.commands import ModelCommands
-from app.views.list_view import AModelListView
+from upakarana import App
+from upakarana.hotkeys import HotKeys
+from upakarana.launcher import Launcher
+from upakarana.models.commands import ModelCommands
+from upakarana.views.list_view import AModelListView
 
 
 class MainWindow(QMainWindow):

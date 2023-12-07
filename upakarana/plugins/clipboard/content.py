@@ -2,8 +2,8 @@ from typing import cast
 
 from PyQt6.QtWidgets import QWidget
 
-from app import App
-from app.views.list_view import AModelListView
+from upakarana import App
+from upakarana.views.list_view import AModelListView
 
 from .model import ModelClipboard
 from .service import ClipboardHandler

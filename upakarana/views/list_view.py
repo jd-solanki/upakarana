@@ -3,8 +3,8 @@ from typing import Final, Type
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QListView, QVBoxLayout, QWidget
 
-from app.custom_widgets.line_edit import ModelFilterLineEdit
-from app.models.abstract_list_model import AAbstractListModel
+from upakarana.custom_widgets.line_edit import ModelFilterLineEdit
+from upakarana.models.abstract_list_model import AAbstractListModel
 
 
 class AModelListView[ListItem]:

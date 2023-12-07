@@ -4,7 +4,7 @@ from PyQt6.QtCore import QObject, QTimer, pyqtSignal
 from PyQt6.QtGui import QClipboard
 from PyQt6.QtWidgets import QApplication
 
-from app.launcher import current_dir as launcher_dir
+from upakarana.launcher import current_dir as launcher_dir
 
 from .model import ClipboardItem
 

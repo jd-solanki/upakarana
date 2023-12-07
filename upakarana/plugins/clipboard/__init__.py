@@ -1,6 +1,6 @@
-from app import App
-from app.launcher import Launcher
-from app.launcher import Plugin as LauncherPlugin
+from upakarana import App
+from upakarana.launcher import Launcher
+from upakarana.launcher import Plugin as LauncherPlugin
 
 from .commands import clipboard
 from .service import ClipboardHandler

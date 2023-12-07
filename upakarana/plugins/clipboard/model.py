@@ -4,8 +4,8 @@ from PyQt6.QtCore import QModelIndex, Qt
 from PyQt6.QtGui import QClipboard
 from PyQt6.QtWidgets import QMainWindow
 
-from app import App
-from app.models.abstract_list_model import AAbstractListModel
+from upakarana import App
+from upakarana.models.abstract_list_model import AAbstractListModel
 
 
 class ClipboardItem(TypedDict):

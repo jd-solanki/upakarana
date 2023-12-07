@@ -1,5 +1,5 @@
-from app.launcher import Launcher
-from app.launcher import Plugin as LauncherPlugin
+from upakarana.launcher import Launcher
+from upakarana.launcher import Plugin as LauncherPlugin
 
 from .commands import emoji
 

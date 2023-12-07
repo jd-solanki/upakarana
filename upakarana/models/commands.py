@@ -3,9 +3,9 @@ from typing import override
 from PyQt6.QtCore import QModelIndex, Qt
 from PyQt6.QtWidgets import QMainWindow
 
-from app import App
-from app.launcher import ContentCommand, ExecutableCommand
-from app.models.abstract_list_model import AAbstractListModel
+from upakarana import App
+from upakarana.launcher import ContentCommand, ExecutableCommand
+from upakarana.models.abstract_list_model import AAbstractListModel
 
 
 class ModelCommands(AAbstractListModel[ContentCommand | ExecutableCommand]):

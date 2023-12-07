@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QMainWindow, QStackedLayout
 
-from app.events import Events
+from upakarana.events import Events
 
 
 class App:

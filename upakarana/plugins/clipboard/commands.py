@@ -1,4 +1,4 @@
-from app.launcher import ContentCommand
+from upakarana.launcher import ContentCommand
 
 from .content import ClipboardContent
 

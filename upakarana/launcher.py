@@ -43,10 +43,10 @@ class Launcher:
         # Get list of plugin directories
         plugin_dirs = [path for path in plugins_dir.iterdir() if path.is_dir()]
 
-        # plugins = [importlib.import_module(f'app.plugins.{dir.name}') for dir in plugin_dirs]
+        # plugins = [importlib.import_module(f'upakarana.plugins.{dir.name}') for dir in plugin_dirs]
 
         for dir in plugin_dirs:
-            plugin_module = importlib.import_module(f"app.plugins.{dir.name}")
+            plugin_module = importlib.import_module(f"upakarana.plugins.{dir.name}")
             if plugin_module.Plugin.is_enabled:
                 self.plugins.append(plugin_module.Plugin)
                 plugin_module.Plugin.init(self)
