@@ -1,6 +1,7 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedLayout, QWidget
 
 from upakarana.events import Events
+from upakarana.settings import Settings
 
 
 class App:
@@ -9,6 +10,7 @@ class App:
     _main_window: QMainWindow | None = None
     stacked_layout: QStackedLayout = QStackedLayout()
     events: Events = Events()
+    settings = Settings()
 
     def __new__(cls):
         if cls._instance is None:

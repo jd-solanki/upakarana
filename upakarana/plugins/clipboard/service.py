@@ -4,9 +4,12 @@ from PyQt6.QtCore import QObject, QTimer, pyqtSignal
 from PyQt6.QtGui import QClipboard
 from PyQt6.QtWidgets import QApplication
 
-from upakarana.launcher import current_dir as launcher_dir
+from upakarana.settings import PluginSettings
 
 from .model import ClipboardItem
+
+# ℹ️ We have to write PLUGIN_NAME here instead of entry file due to circular imports
+PLUGIN_NAME = "clipboard"
 
 
 class ClipboardWatcher(QObject):
@@ -32,6 +35,8 @@ class ClipboardWatcher(QObject):
 
 class ClipboardHandler:
     def __init__(self) -> None:
+        self.settings = PluginSettings(PLUGIN_NAME)
+
         self.init_clipboard()
         self.init_data_file()
         self.init_clipboard_watcher()
@@ -39,7 +44,7 @@ class ClipboardHandler:
         self.clipboard.dataChanged.connect(self.on_clipboard_change)  # type: ignore
 
     def init_data_file(self):
-        self.clipboard_file_path = launcher_dir.parent / "clipboard.json"
+        self.clipboard_file_path = self.settings.data_dir / "clipboard-data.json"
 
         if not self.clipboard_file_path.exists():
             self.clipboard_file_path.write_text("[]")

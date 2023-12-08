@@ -3,7 +3,9 @@ from upakarana.launcher import Launcher
 from upakarana.launcher import Plugin as LauncherPlugin
 
 from .commands import clipboard
-from .service import ClipboardHandler
+
+# ℹ️ We have to write `PLUGIN_NAME` in `service.py` instead of here due to circular imports
+from .service import PLUGIN_NAME, ClipboardHandler
 
 
 def init(launcher: Launcher):
@@ -14,4 +16,4 @@ def init(launcher: Launcher):
     print("Registering clipboard plugin")
 
 
-Plugin = LauncherPlugin(name="Clipboard", init=init)
+Plugin = LauncherPlugin(name=PLUGIN_NAME, init=init)
