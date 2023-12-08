@@ -3,7 +3,12 @@ from typing import cast, override
 
 from PyQt6.QtCore import QEvent, QObject, Qt
 from PyQt6.QtGui import QGuiApplication, QKeyEvent
-from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedLayout, QWidget
+from PyQt6.QtWidgets import (
+    QApplication,
+    QMainWindow,
+    QStackedLayout,
+    QWidget,
+)
 
 from upakarana import App
 from upakarana.fonts import CustomFont
@@ -73,6 +78,9 @@ class MainWindow(QMainWindow):
         self.stacked_layout_widget = QWidget()
         self.stacked_layout_widget.setLayout(self.stacked_layout)
         self.setCentralWidget(self.stacked_layout_widget)
+
+        # self.statusBar().setSizeGripEnabled(False)
+        # self.statusBar().showMessage("Ready")
 
         # Install the event filter
         self.installEventFilter(self)

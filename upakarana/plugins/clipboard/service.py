@@ -4,7 +4,9 @@ from PyQt6.QtCore import QObject, QTimer, pyqtSignal
 from PyQt6.QtGui import QClipboard
 from PyQt6.QtWidgets import QApplication
 
+from upakarana.platform import PlatformUtils
 from upakarana.settings import PluginSettings
+from upakarana.utils import CommandRunner
 
 from .model import ClipboardItem
 
@@ -18,19 +20,30 @@ class ClipboardWatcher(QObject):
     def __init__(self, clipboard: QClipboard, interval_in_ms: int = 500) -> None:
         super().__init__()
         self.clipboard = clipboard
-        self.last_clipboard_content = None
+        self.last_clipboard_content: str | None = None
         self.check_clipboard_timer = QTimer()
         self.check_clipboard_timer.timeout.connect(self.check_clipboard)  # type: ignore
         self.check_clipboard_timer.start(
             interval_in_ms
         )  # Check every `interval` milliseconds
 
-    # ℹ️ This can't detect new clipboard content when copied without focus on the app on Ubuntu 22.10 (works on Mac & haven't tested on Windows)
-    def check_clipboard(self):
-        current_clipboard_content = self.clipboard.text()
+    def handle_unfocused_clipboard_change(self, content: str):
+        current_clipboard_content = content
         if current_clipboard_content != self.last_clipboard_content:
             self.last_clipboard_content = current_clipboard_content
             self.clipboard_changed.emit(current_clipboard_content)
+
+    # ℹ️ This can't detect new clipboard content when copied without focus on the app on Ubuntu 22.10 (works on Mac & haven't tested on Windows)
+    def check_clipboard(self):
+        self.platform_utils = PlatformUtils()
+
+        # ℹ️ If it's linux get clipboard content using `xclip` command because `QClipboard` doesn't work on linux when app is not focused
+        if self.platform_utils.get_platform() == "linux":
+            self._thread = CommandRunner(["xclip", "-o", "-selection", "clipboard"])
+            self._thread.output.connect(self.handle_unfocused_clipboard_change)  # type: ignore
+            self._thread.start()
+        else:
+            self.handle_unfocused_clipboard_change(self.clipboard.text())
 
 
 class ClipboardHandler:
