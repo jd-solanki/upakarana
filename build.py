@@ -24,6 +24,9 @@ hidden_imports = generate_hidden_imports(plugins_dir)
 PyInstaller.__main__.run(
     [
         "--onefile",
+        "--clean",
+        "--name",
+        "upakarana",
         "--add-data",
         "upakarana/plugins:upakarana/plugins",
         *hidden_imports,

@@ -1,6 +1,10 @@
 name: Build Application
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/build.yml
 
 jobs:
   build:
@@ -19,19 +23,28 @@ jobs:
           python-version: '3.12'
 
       - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          virtualenvs-in-project: true
+        uses: abatilo/actions-poetry@v2
+
+      - name: Update poetry config
+        run: poetry config virtualenvs.in-project true
+
+      - name: Install make (Windows)
+        if: runner.os == 'Windows'
+        run: choco install make
 
       - name: Install dependencies
-        run: |
-          make install && source .venv/bin/activate
+        run: poetry run poetry --version && make install
 
-      - name: Build Application
-        run: make build
+      - name: Build Application (Linux, macOS)
+        if: matrix.os != 'windows-latest'
+        run: source .venv/bin/activate && make build
+
+      - name: Build Application (Windows)
+        if: matrix.os == 'windows-latest'
+        run: .venv\Scripts\activate && make build
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: app-${{ matrix.os }}
+          name: upakarana-${{ matrix.os }}
           path: dist/
