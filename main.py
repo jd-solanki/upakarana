@@ -6,9 +6,11 @@ from PyQt6.QtGui import QGuiApplication, QKeyEvent
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedLayout, QWidget
 
 from upakarana import App
+from upakarana.fonts import CustomFont
 from upakarana.hotkeys import HotKeys
 from upakarana.launcher import Launcher
 from upakarana.models.commands import ModelCommands
+from upakarana.paths import css_dir, fonts_dir
 from upakarana.views.list_view import AModelListView
 
 
@@ -49,6 +51,8 @@ class MainWindow(QMainWindow):
         centerPoint = primary_screen.availableGeometry().center()
         qtRectangle.moveCenter(centerPoint)
         self.move(qtRectangle.topLeft())
+
+        self.setStyleSheet("QMainWindow { border-radius: 10px; }")
 
         # Only hide the window if hotkeys are enabled
         if not self.app.is_hotkeys_disabled:
@@ -109,12 +113,20 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+
+    # Set custom fonts
+    custom_fonts = CustomFont(fonts_dir)
+    app.setFont(custom_fonts.get_font("Rubik", 16))
+
     w = MainWindow(Launcher())
 
     # assign main window to app instance
     _app = App()
     _app.is_hotkeys_disabled = "--hotkeys" not in sys.argv
     _app.main_window = w
+
+    # Style
+    app.setStyleSheet((css_dir / "main.css").read_text())
 
     if _app.is_hotkeys_disabled:
         w.show()

@@ -3,6 +3,7 @@ from typing import Final, Type
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QListView, QVBoxLayout, QWidget
 
+from upakarana import App
 from upakarana.custom_widgets.line_edit import ModelFilterLineEdit
 from upakarana.models.abstract_list_model import AAbstractListModel
 
@@ -14,6 +15,7 @@ class AModelListView[ListItem]:
         model: Type[AAbstractListModel[ListItem]],
         list_items: list[ListItem],
     ):
+        self.app = App()
         self.parent = parent_widget
         self.model = model
         self.VIEW_ITEMS: Final[list[ListItem]] = list_items
@@ -22,6 +24,7 @@ class AModelListView[ListItem]:
     def init_ui(self):
         # Views
         self.list_view = QListView()
+        self.app.set_font(self.list_view)
 
         # Models
         self.view_model = self.model(self.VIEW_ITEMS, self.list_view)
@@ -50,6 +53,7 @@ class AModelListView[ListItem]:
 
     def add_widgets_to_layout(self):
         layout = QVBoxLayout()
+        layout.setSpacing(0)
 
         layout.addWidget(self.line_edit)
 

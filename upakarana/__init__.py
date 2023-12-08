@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QMainWindow, QStackedLayout
+from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedLayout, QWidget
 
 from upakarana.events import Events
 
@@ -25,3 +25,8 @@ class App:
     @main_window.setter
     def main_window(self, main_window: QMainWindow):
         self._main_window = main_window
+
+    def set_font(self, widget: QWidget, font_size: int = 14):
+        font = QApplication.font()
+        font.setPointSize(font_size)
+        widget.setFont(font)

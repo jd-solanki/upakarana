@@ -26,8 +26,12 @@ class ModelFilterLineEdit(QLineEdit):
             if a0.key() == Qt.Key.Key_Up:
                 current_index = self.list_view.currentIndex().row()
                 if current_index > 0:
-                    self.list_view.setCurrentIndex(list_view_model.index(current_index - 1, 0))
+                    self.list_view.setCurrentIndex(
+                        list_view_model.index(current_index - 1, 0)
+                    )
             elif a0.key() == Qt.Key.Key_Down:
                 current_index = self.list_view.currentIndex().row()
                 if current_index < list_view_model.rowCount() - 1:
-                    self.list_view.setCurrentIndex(list_view_model.index(current_index + 1, 0))
+                    self.list_view.setCurrentIndex(
+                        list_view_model.index(current_index + 1, 0)
+                    )

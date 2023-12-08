@@ -1,0 +1,59 @@
+// Tailwind Colors Docs: https://tailwindcss.com/docs/customizing-colors
+
+// Color palette
+$slate-50: #fafafa;
+$slate-100: #f4f4f5;
+$slate-200: #e4e4e7;
+$slate-300: #d4d4d8;
+$slate-400: #a1a1aa;
+$slate-500: #71717a;
+$slate-600: #52525b;
+$slate-700: #3f3f46;
+$slate-800: #27272a;
+$slate-900: #18181b;
+$slate-950: #09090b;
+
+
+// Tokens
+$app-bg: $slate-900;
+$text-color: $slate-300;
+$divider-color: $slate-800;
+$list-item-selected-color: $slate-800;
+
+// Styles
+QWidget {
+    color: $text-color;
+}
+
+QApplication {
+    border-radius: 6px;
+}
+
+QMainWindow {
+    background-color: $app-bg;
+    border-radius: 6px;
+    border: 1px solid $divider-color;
+}
+
+QLineEdit {
+    padding: 15px;
+    background-color: transparent;
+    border: none;
+}
+
+QListView {
+    border-top: 1px solid $divider-color;
+    padding: 10px;
+    font-size: inherit;
+    background-color: transparent;
+}
+
+QListView::item {
+    padding: 10px 5px;
+    border-radius: 6px !important;
+}
+
+QListView::item:selected {
+    background-color: $slate-800;
+    color: $text-color;
+}
