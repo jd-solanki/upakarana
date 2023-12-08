@@ -28,3 +28,8 @@ I love raycast and I use it on my office Mac. But I have linux on my personal ma
 I'm new to PyQt so feel free to discuss new ideas and improvements. You can also open an issue if you find any bugs or want to suggest a new feature. If you want to contribute code, please open a pull request.
 
 If you are an expert at design patterns I guess you'll love this project. I'm not sure if I'm using the right design patterns. So, if you find any design pattern that can be used in this project, please open an issue or pull request.
+
+## 📚 Resources
+
+- [QT docs](https://doc.qt.io/qtforpython-6)
+- [MyPy Docs](https://mypy.readthedocs.io/)
