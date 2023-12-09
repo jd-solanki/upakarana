@@ -1,3 +1,4 @@
+from PyQt6.QtCore import QThreadPool
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedLayout, QWidget
 
 from upakarana.events import Events
@@ -11,6 +12,7 @@ class App:
     stacked_layout: QStackedLayout = QStackedLayout()
     events: Events = Events()
     settings = Settings()
+    threadpool = QThreadPool()
 
     def __new__(cls):
         if cls._instance is None:

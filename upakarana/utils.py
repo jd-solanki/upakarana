@@ -1,7 +1,12 @@
 import subprocess
 from typing import Callable, Iterable
 
-from PyQt6.QtCore import QProcess, QTimer
+import httpx
+from httpx import Response
+from PyQt6.QtCore import QProcess, QTimer, pyqtBoundSignal
+
+from upakarana import App
+from upakarana.worker import Worker
 
 
 def exec(command: list[str]):
@@ -67,3 +72,49 @@ class IntervalCommand:
         )  # Check every `interval` milliseconds
         self.timer.timeout.connect(self.cmd_runner.exec_cmd)  # type: ignore
         self.timer.start()
+
+
+class RequestHelper:
+    def __init__(
+        self,
+        url: str,
+        cb_res_handler: Callable[[Response], None],
+        headers: dict[str, str] = {},
+        params: dict[str, str] = {},
+    ):
+        self.url = url
+        self.cb_res_handler = cb_res_handler
+        self.headers = headers
+        self.params = params
+        self.app = App()
+
+        # Meta
+        self.is_loading = False
+        self.data = None
+
+    def run(self):
+        worker = Worker(
+            self.make_api_call
+        )  # Any other args, kwargs are passed to the run function
+        worker.signals.result.connect(self.cb_res_handler)  # type: ignore
+        worker.signals.finished.connect(self.on_finish)  # type: ignore
+        # worker.signals.progress.connect(self.progress_fn)
+
+        # Execute
+        self.app.threadpool.start(worker)
+
+    def make_api_call(self, progress_callback: pyqtBoundSignal) -> Response:
+        self.is_loading = True
+
+        # Make API call
+        # TODO: Handle exceptions & errors
+        r = httpx.get(self.url, headers=self.headers, params=self.params)
+        progress_callback.emit(100)
+        return r
+
+    # def handle_response(self, r: Response):
+    #     self.data = r.json()
+
+    def on_finish(self):
+        print("THREAD COMPLETE!")
+        self.is_loading = False
