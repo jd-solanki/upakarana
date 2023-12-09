@@ -1,6 +1,6 @@
 from typing import Any, override
 
-from PyQt6.QtCore import QAbstractItemModel, Qt
+from PyQt6.QtCore import QAbstractItemModel, QObject, Qt, QTimer, pyqtSignal
 from PyQt6.QtGui import QKeyEvent
 from PyQt6.QtWidgets import (
     QLineEdit,
@@ -8,10 +8,27 @@ from PyQt6.QtWidgets import (
 )
 
 
+class CustomSignals(QObject):
+    debounced_text_changed = pyqtSignal(str)
+
+
 class ModelFilterLineEdit(QLineEdit):
     def __init__(self, list_view: QListView, *args: Any, **kwargs: Any):
         super().__init__(*args, **kwargs)
         self.list_view = list_view
+
+        self._custom_signals = CustomSignals()
+        self.debounced_text_changed = self._custom_signals.debounced_text_changed
+
+        # TODO: Extract this to a separate class
+        # TODO: Document this
+        self.debounce = QTimer()
+        self.debounce.setInterval(500)
+        self.debounce.setSingleShot(True)
+        self.debounce.timeout.connect(  # type: ignore
+            lambda: self.debounced_text_changed.emit(self.text())
+        )
+        self.textChanged.connect(self.debounce.start)  # type: ignore
 
     # ℹ️ a0 is event
     @override
