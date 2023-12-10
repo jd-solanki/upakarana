@@ -14,10 +14,12 @@ class AModelListView[ListItem]:
         parent_widget: QWidget,
         model: Type[AAbstractListModel[ListItem]],
         list_items: list[ListItem],
+        search_placeholder: str = "Search...",
     ):
         self.app = App()
         self.parent = parent_widget
         self.model = model
+        self.search_placeholder = search_placeholder
         self.VIEW_ITEMS: Final[list[ListItem]] = list_items
         self.init_ui()
 
@@ -31,7 +33,7 @@ class AModelListView[ListItem]:
 
         # Line Edit
         self.line_edit = ModelFilterLineEdit(self.list_view)
-        self.line_edit.setPlaceholderText("Search command...")
+        self.line_edit.setPlaceholderText(self.search_placeholder)
         self.line_edit.textChanged.connect(self.view_model.filter_list_item)  # type: ignore
         self.line_edit.returnPressed.connect(self.view_model.on_select_item)  # type: ignore
 

@@ -15,7 +15,10 @@ class RepositoriesListContent(QWidget):
 
         self.repositories: list[Repository] = []
         self.model_list_view = AModelListView(
-            self, ModelGithubRepositories, self.repositories
+            self,
+            ModelGithubRepositories,
+            self.repositories,
+            search_placeholder="Search repositories...",
         )
         self.fetch_repos()
 
