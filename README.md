@@ -17,6 +17,7 @@ I love raycast and I use it on my office Mac. But I have linux on my personal ma
   - [ ] Third-party plugins
   - [ ] Built-in Plugins
     - [x] Clipboard Manager
+    - [ ] Site Explorer
     - [ ] GitHub
     - [ ] Screen to text
     - [ ] Calculator
