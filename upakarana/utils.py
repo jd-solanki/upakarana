@@ -4,6 +4,7 @@ from typing import Callable, Iterable
 import httpx
 from httpx import Response
 from PyQt6.QtCore import QProcess, QTimer, pyqtBoundSignal
+from PyQt6.QtWidgets import QLabel
 
 from upakarana import App
 from upakarana.worker import Worker
@@ -11,6 +12,22 @@ from upakarana.worker import Worker
 
 def exec(command: list[str]):
     subprocess.run(command, shell=True, capture_output=True, text=True)
+
+
+class StatusBarMessage:
+    def __init__(self):
+        self.app = App()
+
+        # Get current message
+        self.w_label = self.app.status_bar.findChild(QLabel)
+        self.prev_msg = self.w_label.text()
+        print(f"self.prev_msg: {self.prev_msg}")
+
+    def set(self, msg: str):
+        self.w_label.setText(msg)
+
+    def reset(self):
+        self.w_label.setText(self.prev_msg)
 
 
 class CommandRunner:

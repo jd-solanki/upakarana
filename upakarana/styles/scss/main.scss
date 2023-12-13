@@ -57,3 +57,10 @@ QListView::item:selected {
     background-color: $slate-800;
     color: $text-color;
 }
+
+// Statusbar
+
+QStatusBar {
+    background-color: transparent;
+    border-top: 1px solid $divider-color;
+}

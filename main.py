@@ -5,6 +5,8 @@ from PyQt6.QtCore import QEvent, QObject, Qt
 from PyQt6.QtGui import QGuiApplication, QKeyEvent
 from PyQt6.QtWidgets import (
     QApplication,
+    QHBoxLayout,
+    QLabel,
     QMainWindow,
     QStackedLayout,
     QWidget,
@@ -26,6 +28,9 @@ class MainWindow(QMainWindow):
         self.app = App()
         self.app.events.emit("init", self)
 
+        # Set the status bar
+        self.init_status_bar()
+
         self.init_window()
 
         self.init_launcher(launcher)
@@ -36,6 +41,26 @@ class MainWindow(QMainWindow):
         commands_content = QWidget()
         AModelListView(commands_content, ModelCommands, self.launcher.commands)
         self.stacked_layout.addWidget(commands_content)
+
+    def init_status_bar(self):
+        # Set the status bar to the app instance
+        _status_bar = self.statusBar()
+        if _status_bar:
+            self.app.status_bar = _status_bar
+
+        self.app.status_bar.setSizeGripEnabled(False)
+        # self.status_bar().showMessage("Ready")
+
+        # Add label to the status bar
+        label = QLabel("Boosting your productivity")
+        # label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.app.status_bar.addWidget(label)
+
+        # Set status bar layout
+        widget = QWidget(self)
+        widget.setLayout(QHBoxLayout())
+        widget.layout().addWidget(label)
+        self.app.status_bar.addWidget(widget, 1)
 
     def init_window(self):
         # Disable window resizing
@@ -78,9 +103,6 @@ class MainWindow(QMainWindow):
         self.stacked_layout_widget = QWidget()
         self.stacked_layout_widget.setLayout(self.stacked_layout)
         self.setCentralWidget(self.stacked_layout_widget)
-
-        # self.statusBar().setSizeGripEnabled(False)
-        # self.statusBar().showMessage("Ready")
 
         # Install the event filter
         self.installEventFilter(self)

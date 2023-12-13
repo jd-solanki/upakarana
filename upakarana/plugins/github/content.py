@@ -3,7 +3,7 @@ from typing import cast
 from httpx import Response
 from PyQt6.QtWidgets import QWidget
 
-from upakarana.utils import RequestHelper
+from upakarana.utils import RequestHelper, StatusBarMessage
 from upakarana.views.list_view import AModelListView
 
 from .model import ModelGithubRepositories, Repository
@@ -20,6 +20,9 @@ class RepositoriesListContent(QWidget):
             self.repositories,
             search_placeholder="Search repositories...",
         )
+
+        self.status_bar_msg = StatusBarMessage()
+        self.status_bar_msg.set("Fetching repositories...")
         self.fetch_repos()
 
         # TODO: Improve type of `AModelListView` to get rid of this cast
@@ -36,7 +39,7 @@ class RepositoriesListContent(QWidget):
         url = _list_url
         headers = {
             "Accept": "application/vnd.github+json",
-            "Authorization": "Bearer <YOUR_TOKEN>",
+            "Authorization": "Bearer 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",
             "X-GitHub-Api-Version": "2022-11-28",
         }
 
@@ -50,7 +53,7 @@ class RepositoriesListContent(QWidget):
             url = _search_url
 
             # Add repo owner to search query
-            params["q"] = line_edit_text + " owner:<YOUR_USERNAME>"
+            params["q"] = line_edit_text + " owner:jd-solanki"
         else:
             url = _list_url
             params["q"] = ""
@@ -67,3 +70,4 @@ class RepositoriesListContent(QWidget):
         self.model.list_items = self.repositories
         self.model.filtered_list_items = self.repositories
         self.model.layoutChanged.emit()
+        self.status_bar_msg.reset()
