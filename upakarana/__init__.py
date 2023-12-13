@@ -30,7 +30,8 @@ class App:
     def main_window(self, main_window: QMainWindow):
         self._main_window = main_window
 
-    def set_font(self, widget: QWidget, font_size: int = 14):
+    def set_font(self, widget: QWidget, font_size: int | None = None):
         font = QApplication.font()
-        font.setPointSize(font_size)
+        if font_size:
+            font.setPointSize(font_size)
         widget.setFont(font)

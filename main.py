@@ -124,7 +124,7 @@ if __name__ == "__main__":
 
     # Set custom fonts
     custom_fonts = CustomFont(fonts_dir)
-    app.setFont(custom_fonts.get_font("Rubik", 16))
+    app.setFont(custom_fonts.get_font("Rubik", 15))
 
     w = MainWindow(Launcher())
 
