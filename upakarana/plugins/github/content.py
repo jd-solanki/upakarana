@@ -39,7 +39,7 @@ class RepositoriesListContent(QWidget):
         url = _list_url
         headers = {
             "Accept": "application/vnd.github+json",
-            "Authorization": "Bearer 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",
+            "Authorization": "Bearer <YOUR_TOKEN>",
             "X-GitHub-Api-Version": "2022-11-28",
         }
 
@@ -53,7 +53,7 @@ class RepositoriesListContent(QWidget):
             url = _search_url
 
             # Add repo owner to search query
-            params["q"] = line_edit_text + " owner:jd-solanki"
+            params["q"] = line_edit_text + " owner:<YOUR_USERNAME>"
         else:
             url = _list_url
             params["q"] = ""
